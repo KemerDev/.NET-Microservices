@@ -2,7 +2,8 @@ using System;
 
 namespace Game.Item.Service.Entities
 {
-    public class ItemCs
+
+    public class ItemCs : IEntity
     {
         public string? Id { get; set; }
         public string? Name { get; set; }

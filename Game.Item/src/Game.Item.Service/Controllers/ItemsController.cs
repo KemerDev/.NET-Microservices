@@ -9,9 +9,9 @@ namespace Game.Item.Service.Controllers
     [Route("Items")]
     public class ItemsController : ControllerBase
     {
-        private readonly IItemsRepository itemsRepository;
+        private readonly IRepository<ItemCs> itemsRepository;
 
-        public ItemsController(IItemsRepository itemsRepository)
+        public ItemsController(IRepository<ItemCs> itemsRepository)
         {
             this.itemsRepository = itemsRepository;
         }
