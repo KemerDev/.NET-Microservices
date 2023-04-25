@@ -1,4 +1,4 @@
-namespace Game.Item.Service.Settings
+namespace Game.Common.Settings
 {
     public class MongoDbSettings
     {

@@ -1,7 +1,6 @@
 using MongoDB.Driver;
-using Game.Item.Service.Entities;
 
-namespace Game.Item.Service.Repositories
+namespace Game.Common.MongoDB
 {
 
     public class MongoRepository<T> : IRepository<T> where T : IEntity

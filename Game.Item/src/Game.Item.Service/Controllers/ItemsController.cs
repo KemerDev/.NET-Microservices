@@ -1,7 +1,7 @@
 using Game.Item.Service.Dtos;
 using Microsoft.AspNetCore.Mvc;
-using Game.Item.Service.Repositories;
 using Game.Item.Service.Entities;
+using Game.Common;
 
 namespace Game.Item.Service.Controllers
 {

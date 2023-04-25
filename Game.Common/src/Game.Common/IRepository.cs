@@ -1,6 +1,4 @@
-using Game.Item.Service.Entities;
-
-namespace Game.Item.Service.Repositories
+namespace Game.Common
 {
     public interface IRepository<T> where T : IEntity
     {

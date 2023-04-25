@@ -1,4 +1,4 @@
-namespace Game.Item.Service.Entities
+namespace Game.Common
 {
     public interface IEntity
     {

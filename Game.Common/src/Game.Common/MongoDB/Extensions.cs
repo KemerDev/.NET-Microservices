@@ -1,11 +1,12 @@
-using Game.Item.Service.Entities;
-using Game.Item.Service.Settings;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Game.Common.Settings;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 
-namespace Game.Item.Service.Repositories
+namespace Game.Common.MongoDB
 {
     public static class Extensions
     {

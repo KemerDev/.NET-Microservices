@@ -1,5 +1,5 @@
+using Game.Common.MongoDB;
 using Game.Item.Service.Entities;
-using Game.Item.Service.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
