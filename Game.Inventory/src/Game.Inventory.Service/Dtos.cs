@@ -2,7 +2,7 @@ namespace Game.Inventory.Service.Dtos
 {
     public record InventoryDto(List<ItemDto> inventoryItems);
 
-    public record CreateInventoryDto(string UserId);
+    public record CreateInventoryDto(string UserId, bool empty = false);
 
     public record GetInventoryDto(string UserId);
 

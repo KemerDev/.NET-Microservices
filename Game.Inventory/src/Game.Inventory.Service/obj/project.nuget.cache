@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "AnggMBWgLAHtJBpFDB+5GYqXbKj/Wud3BN9F7yr52ftfdlXVY0MLEKY1/CmTRwjcWb29vrwMR6Jxjn/+xz4LDA==",
+  "dgSpecHash": "QvjwDJW/Jp93GS0nY52+MZgMMI3DKb+cteuK8Y7wU1r8nyDS5TLShpLq2mcfiZlCjf/zoX3jye2LKBdkdc0+Cg==",
   "success": true,
   "projectFilePath": "D:\\projects\\.NET-Microservices\\Game.Inventory\\src\\Game.Inventory.Service\\Game.Inventory.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kemer\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
-    "C:\\Users\\kemer\\.nuget\\packages\\game.common\\1.0.2\\game.common.1.0.2.nupkg.sha512",
+    "C:\\Users\\kemer\\.nuget\\packages\\game.common\\1.0.4\\game.common.1.0.4.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

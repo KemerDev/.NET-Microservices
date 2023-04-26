@@ -1033,7 +1033,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.2",
+    "version": "1.0.4",
     "restore": {
       "projectUniqueName": "D:\\projects\\.NET-Microservices\\Game.Common\\src\\Game.Common\\Game.Common.csproj",
       "projectName": "Game.Common",

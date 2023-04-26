@@ -1,3 +1,4 @@
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Game.Common.MongoDB
@@ -26,6 +27,11 @@ namespace Game.Common.MongoDB
             FilterDefinition<T> filter = filterBuilder.In(f => f.Id, idList);
 
             return await dbCollection.Find(filter).ToListAsync();
+        }
+
+        public async Task<IEnumerable<T>> GetRandomItemsAsync()
+        {
+            return await dbCollection.Aggregate().AppendStage<T>($@"{{ $sample: {{ size: 1000}}}}").ToListAsync();
         }
 
         public async Task CreateItemsAsync(List<T> itemList)

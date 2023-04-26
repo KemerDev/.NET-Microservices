@@ -46,3 +46,6 @@ D:\projects\.NET-Microservices\Game.Inventory\src\Game.Inventory.Service\obj\Deb
 D:\projects\.NET-Microservices\Game.Inventory\src\Game.Inventory.Service\obj\Debug\net7.0\Game.Inventory.Service.pdb
 D:\projects\.NET-Microservices\Game.Inventory\src\Game.Inventory.Service\obj\Debug\net7.0\Game.Inventory.Service.genruntimeconfig.cache
 D:\projects\.NET-Microservices\Game.Inventory\src\Game.Inventory.Service\obj\Debug\net7.0\ref\Game.Inventory.Service.dll
+D:\projects\.NET-Microservices\Game.Inventory\src\Game.Inventory.Service\bin\Debug\net7.0\Microsoft.Extensions.Http.Polly.dll
+D:\projects\.NET-Microservices\Game.Inventory\src\Game.Inventory.Service\bin\Debug\net7.0\Polly.dll
+D:\projects\.NET-Microservices\Game.Inventory\src\Game.Inventory.Service\bin\Debug\net7.0\Polly.Extensions.Http.dll

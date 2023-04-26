@@ -11,11 +11,24 @@ namespace Game.Inventory.Service.Clients
             this.httpClient = httpClient;
         }
 
-        public async Task<IReadOnlyCollection<ItemDto>> GetItemsAsync()
+        public async Task<IEnumerable<ItemDto>> GetItemsAsync()
         {
-            var items = await httpClient.GetFromJsonAsync<IReadOnlyCollection<ItemDto>>("/Items");
+            var items = await httpClient.GetFromJsonAsync<IEnumerable<ItemDto>>("/Items");
 
             return items;
+        }
+
+        public async Task<IEnumerable<ItemDto>> GetItemAsync()
+        {
+            var filteredItems = await httpClient.GetFromJsonAsync<IEnumerable<ItemDto>>("/Items/GrabItems");
+
+            return filteredItems;
+        }
+
+        public async Task<IEnumerable<ItemDto>> GetRandomItemsAsync()
+        {
+            var randomItems = await httpClient.GetFromJsonAsync<IEnumerable<ItemDto>>("/Items/RandomItems");
+            return randomItems;
         }
     }
 }

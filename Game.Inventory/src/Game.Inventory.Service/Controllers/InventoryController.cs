@@ -19,15 +19,41 @@ namespace Game.Inventory.Service.Controllers
             this.itemClient = itemClient;
         }
 
+        [HttpGet("{_id}")]
+        public async Task<ActionResult<List<InventoryDto>>> GetInventoryAsync(List<string> _id)
+        {
+            if (_id == null)
+            {
+                return BadRequest();
+            }
+
+            var inventory = await inventoryRepository.GetItemAsync(_id);
+
+            return Ok(inventory);
+        }
+
         // create players inventory or containers or world global container
         [HttpPost]
-        public async Task<ActionResult<InventoryDto>> CreateInventoryAsync([FromBody] CreateInventoryDto userId)
+        public async Task<ActionResult> CreateInventoryAsync([FromBody] CreateInventoryDto flags)
         {
+            var tempItems = new List<ItemDto>();
+
+            // if flags.empty is true then fill inventory with items
+            if (flags.empty)
+            {
+                var randomItems = await itemClient.GetRandomItemsAsync();
+
+                foreach (var item in randomItems)
+                {
+                    tempItems.Add(item);
+                }
+            }
+
             var temp = new InventoryCs
             {
                 Id = Guid.NewGuid().ToString(),
-                UserId = userId.UserId,
-                inventoryItems = new List<ItemDto>()
+                UserId = flags.UserId,
+                inventoryItems = tempItems
             };
 
             var tempList = new List<InventoryCs>();
@@ -35,30 +61,7 @@ namespace Game.Inventory.Service.Controllers
 
             await inventoryRepository.CreateItemsAsync(tempList);
 
-            return Ok("test");
+            return Ok("Created");
         }
-
-
-        [HttpGet("{userId}")]
-        public async Task<ActionResult<InventoryDto>> GetInventoryAsync(string userId)
-        {
-            if (userId == null)
-            {
-                return BadRequest();
-            }
-
-            var tempList = new List<string>();
-            tempList.Add(userId);
-
-            var inventory = await inventoryRepository.GetItemAsync(tempList);
-
-            return Ok(inventory);
-        }
-
-        // [HttpGet("items")]
-        // public Task<ActionResult<IEnumerable<ItemDto>>> GetInventoryItemsAsync(List<string> itemsId)
-        // {
-        //     return Ok("test");
-        // }
     }
 }

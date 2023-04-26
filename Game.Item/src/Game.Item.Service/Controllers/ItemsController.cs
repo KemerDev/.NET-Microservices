@@ -28,13 +28,20 @@ namespace Game.Item.Service.Controllers
         }
 
         // return one or many items | spawned items, inventory items etc
-        [HttpPost("GrubItems")]
+        [HttpPost("GrabItems")]
         public async Task<IEnumerable<ItemDto>> GetItemAsync([FromBody] List<string> itemsId)
         {
 
             var filteredItems = (await itemsRepository.GetItemAsync(itemsId)).Select(item => item.AsDto());
 
             return filteredItems;
+        }
+
+        [HttpGet("RandomItems")]
+        public async Task<List<ItemDto>> GetRandomItemsAsync()
+        {
+            var randomItems = (await itemsRepository.GetRandomItemsAsync()).Select(item => item.AsDto());
+            return randomItems.ToList();
         }
 
         // create world loot, add item to players inventory etc

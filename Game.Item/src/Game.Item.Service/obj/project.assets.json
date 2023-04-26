@@ -47,7 +47,7 @@
           }
         }
       },
-      "Game.Common/1.0.2": {
+      "Game.Common/1.0.4": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "7.0.0",
@@ -592,13 +592,13 @@
         "lib/netstandard2.1/DnsClient.xml"
       ]
     },
-    "Game.Common/1.0.2": {
-      "sha512": "gigmOunJyKVSZp0ALQTXMjunLKf3LTkG4r2TbOLkfR6ezII2q7wSaaBEQGBI0jaw+PbE+3Chb6xMne6bePvaFg==",
+    "Game.Common/1.0.4": {
+      "sha512": "J6HB4eahDTKU295jltMGaiOzFraWVWjygzLVuC92PBe8+pE4Ttqv2ynSnriJ6XTzR0VjAowQyB5e1Tuy/1k/NQ==",
       "type": "package",
-      "path": "game.common/1.0.2",
+      "path": "game.common/1.0.4",
       "files": [
         ".nupkg.metadata",
-        "game.common.1.0.2.nupkg.sha512",
+        "game.common.1.0.4.nupkg.sha512",
         "game.common.nuspec",
         "lib/net7.0/Game.Common.dll"
       ]
@@ -1495,7 +1495,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Game.Common >= 1.0.2",
+      "Game.Common >= 1.0.4",
       "Microsoft.AspNetCore.OpenApi >= 7.0.4",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -1548,7 +1548,7 @@
         "dependencies": {
           "Game.Common": {
             "target": "Package",
-            "version": "[1.0.2, )"
+            "version": "[1.0.4, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
