@@ -1,4 +1,5 @@
 using Game.Common;
+using Game.Inventory.Service.Dtos;
 
 namespace Game.Inventory.Service.Entities
 {
@@ -6,7 +7,6 @@ namespace Game.Inventory.Service.Entities
     {
         public string? Id { get; init; }
         public string? UserId { get; init; }
-
-        public List<IEntity> inventoryItems { get; set; }
+        public List<ItemDto> inventoryItems { get; set; }
     }
 }

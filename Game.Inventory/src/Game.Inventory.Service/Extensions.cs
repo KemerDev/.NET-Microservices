@@ -7,7 +7,7 @@ namespace Game.Inventory.Service
     {
         public static InventoryDto AsDto(this InventoryCs inventory)
         {
-            return new InventoryDto(inventory.Id, inventory.UserId, inventory.inventoryItems);
+            return new InventoryDto(inventory.inventoryItems);
         }
     }
 }

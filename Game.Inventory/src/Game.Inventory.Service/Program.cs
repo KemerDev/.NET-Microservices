@@ -1,4 +1,5 @@
 using Game.Common.MongoDB;
+using Game.Inventory.Service.Clients;
 using Game.Inventory.Service.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMongo().AddMongoRepository<InventoryCs>("inventory");
+// register http client
+builder.Services.AddHttpClient<ItemClient>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5142");
+});
 
 var app = builder.Build();
 
