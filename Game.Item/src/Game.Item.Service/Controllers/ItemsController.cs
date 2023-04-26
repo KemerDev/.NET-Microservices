@@ -11,6 +11,8 @@ namespace Game.Item.Service.Controllers
     {
         private readonly IRepository<ItemCs> itemsRepository;
 
+        private static int requestCount = 0;
+
         public ItemsController(IRepository<ItemCs> itemsRepository)
         {
             this.itemsRepository = itemsRepository;
@@ -18,11 +20,11 @@ namespace Game.Item.Service.Controllers
 
         // return all items | spawned items, inventory items etc
         [HttpGet]
-        public async Task<IEnumerable<ItemDto>> GetItemsAsync()
+        public async Task<ActionResult<IEnumerable<ItemDto>>> GetItemsAsync()
         {
             var items = (await itemsRepository.GetItemsAsync()).Select(item => item.AsDto());
 
-            return items;
+            return Ok(items);
         }
 
         // return one or many items | spawned items, inventory items etc
