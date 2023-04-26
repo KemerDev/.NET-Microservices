@@ -1033,7 +1033,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "D:\\projects\\.NET-Microservices\\Game.Common\\src\\Game.Common\\Game.Common.csproj",
       "projectName": "Game.Common",
@@ -1055,6 +1055,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
+        "D:\\projects\\.NET-Microservices\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

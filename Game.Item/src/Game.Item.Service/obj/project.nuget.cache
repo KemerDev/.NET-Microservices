@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ieCWPeXQjfNQLrnQhvLT0biC4hJOSIkzU57sbIsGxYwXkPbpVEuLtdRVsT7eV62URcrSKChrJbqwTYaqhlHsqw==",
+  "dgSpecHash": "wjPrJDaU1CefaY3OJbp5ck+1PLrXSFzExIdKKjiZAs2eInjBOXKm6gpInkbk0RBI8F38yXbiAxuI8FLiKHSd1Q==",
   "success": true,
   "projectFilePath": "D:\\projects\\.NET-Microservices\\Game.Item\\src\\Game.Item.Service\\Game.Item.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kemer\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
-    "C:\\Users\\kemer\\.nuget\\packages\\game.common\\1.0.0\\game.common.1.0.0.nupkg.sha512",
+    "C:\\Users\\kemer\\.nuget\\packages\\game.common\\1.0.2\\game.common.1.0.2.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\kemer\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

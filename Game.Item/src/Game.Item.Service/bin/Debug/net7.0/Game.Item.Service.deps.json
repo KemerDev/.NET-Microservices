@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "Game.Item.Service/1.0.0": {
         "dependencies": {
-          "Game.Common": "1.0.0",
+          "Game.Common": "1.0.2",
           "Microsoft.AspNetCore.OpenApi": "7.0.4",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
@@ -46,7 +46,7 @@
           }
         }
       },
-      "Game.Common/1.0.0": {
+      "Game.Common/1.0.2": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.4",
@@ -55,8 +55,8 @@
         },
         "runtime": {
           "lib/net7.0/Game.Common.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
           }
         }
       },
@@ -286,12 +286,12 @@
       "path": "dnsclient/1.6.1",
       "hashPath": "dnsclient.1.6.1.nupkg.sha512"
     },
-    "Game.Common/1.0.0": {
+    "Game.Common/1.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6ZlOiOGmXAG0j/mpdQckHQ90gcVAqjVvYRrPZmZlguzZpZ2OtzHvmw7E8a0b/1RuarDD4BHk/fH3tW8vrE+tMA==",
-      "path": "game.common/1.0.0",
-      "hashPath": "game.common.1.0.0.nupkg.sha512"
+      "sha512": "sha512-gigmOunJyKVSZp0ALQTXMjunLKf3LTkG4r2TbOLkfR6ezII2q7wSaaBEQGBI0jaw+PbE+3Chb6xMne6bePvaFg==",
+      "path": "game.common/1.0.2",
+      "hashPath": "game.common.1.0.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/7.0.4": {
       "type": "package",

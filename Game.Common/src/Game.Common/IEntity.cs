@@ -2,6 +2,6 @@ namespace Game.Common
 {
     public interface IEntity
     {
-        string? Id { get; set; }
+        string? Id { get; init; }
     }
 }

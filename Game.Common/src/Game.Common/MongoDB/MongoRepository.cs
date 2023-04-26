@@ -38,28 +38,30 @@ namespace Game.Common.MongoDB
             await dbCollection.InsertManyAsync(itemList);
         }
 
-        public async Task UpdateItemAsync(T entity)
+        public async Task UpdateItemAsync(List<T> entities)
         {
-            if (entity == null)
+            if (entities == null)
             {
-                throw new ArgumentNullException(nameof(entity));
+                throw new ArgumentNullException(nameof(entities));
             }
 
-            FilterDefinition<T> filter = filterBuilder.Eq(existingEntity => existingEntity.Id, entity.Id);
-
-            await dbCollection.ReplaceOneAsync(filter, entity);
+            foreach (var entity in entities)
+            {
+                FilterDefinition<T> filter = filterBuilder.Eq(existingEntity => existingEntity.Id, entity.Id);
+                await dbCollection.ReplaceOneAsync(filter, entity);
+            }
         }
 
-        public async Task DeleteItemAsync(T entity)
+        public async Task DeleteItemAsync(List<string> entities)
         {
-            if (entity == null)
+            if (entities == null)
             {
-                throw new ArgumentNullException(nameof(entity));
+                throw new ArgumentNullException(nameof(entities));
             }
 
-            FilterDefinition<T> filter = filterBuilder.Eq(deleteEntity => deleteEntity.Id, entity.Id);
+            FilterDefinition<T> filter = filterBuilder.In(deleteEntity => deleteEntity.Id, entities);
 
-            await dbCollection.DeleteOneAsync(filter);
+            await dbCollection.DeleteManyAsync(filter);
         }
     }
 }
