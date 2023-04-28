@@ -11,6 +11,7 @@ namespace Game.Inventory.Service.Controllers
     public class InventoryController : ControllerBase
     {
         private readonly IRepository<InventoryCs> inventoryRepository;
+
         private readonly ItemClient itemClient;
 
         public InventoryController(IRepository<InventoryCs> inventoryRepository, ItemClient itemClient)
@@ -34,33 +35,108 @@ namespace Game.Inventory.Service.Controllers
 
         // create players inventory or containers or world global container
         [HttpPost]
-        public async Task<ActionResult> CreateInventoryAsync([FromBody] CreateInventoryDto flags)
+        public async Task<ActionResult> InitWorldInventoryAsync([FromBody] CreateInventoryDto flags)
         {
-            var tempItems = new List<ItemDto>();
+            var tempItems = new List<ItemCs>();
 
             // if flags.empty is true then fill inventory with items
-            if (flags.empty)
+            if (flags.worldInit)
             {
+                var containerSum = 100;
                 var randomItems = await itemClient.GetRandomItemsAsync();
+
+                var InitMasterInventory = new InventoryCs
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    UserId = flags.UserId,
+                    inventoryList = new List<ContainerCs>(),
+                };
+
+                var ScarceCont = new ContainerCs
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Name = "ScarseLootContainer",
+                    itemList = new List<ItemCs>()
+                };
+
+                var contCount = -1;
+                var tempCount = -1;
 
                 foreach (var item in randomItems)
                 {
-                    tempItems.Add(item);
+                    tempCount++;
+
+                    if (tempCount == 5 && contCount <= 50)
+                    {
+                        contCount++;
+
+                        var Containers = new ContainerCs
+                        {
+                            Id = Guid.NewGuid().ToString(),
+                            Name = "CrateContainer",
+                            itemList = tempItems
+                        };
+
+                        InitMasterInventory.inventoryList.Add(Containers);
+
+                        tempCount = -1;
+
+                        tempItems.Clear();
+                    }
+
+                    if (tempCount == 5 && (contCount > 50 || contCount <= 70))
+                    {
+                        contCount++;
+
+                        var Containers = new ContainerCs
+                        {
+                            Id = Guid.NewGuid().ToString(),
+                            Name = "CacheContainer",
+                            itemList = tempItems
+                        };
+
+                        InitMasterInventory.inventoryList.Add(Containers);
+
+                        tempCount = -1;
+
+                        tempItems.Clear();
+                    }
+
+                    if (tempCount == 5 && (contCount > 70 || contCount <= containerSum))
+                    {
+                        contCount++;
+
+                        var Containers = new ContainerCs
+                        {
+                            Id = Guid.NewGuid().ToString(),
+                            Name = "OtherContainer",
+                            itemList = tempItems
+                        };
+
+                        InitMasterInventory.inventoryList.Add(Containers);
+
+                        tempCount = -1;
+
+                        tempItems.Clear();
+                    }
+
+                    var tempItem = new ItemCs
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        Description = item.Description,
+                        CreatedDate = DateTimeOffset.UtcNow
+                    };
+
+                    tempItems.Add(tempItem);
                 }
+
+                ScarceCont.itemList = tempItems;
+
+                InitMasterInventory.inventoryList.Add(ScarceCont);
+
+                await inventoryRepository.CreateItemsAsync(new List<InventoryCs> { InitMasterInventory });
             }
-
-            var temp = new InventoryCs
-            {
-                Id = Guid.NewGuid().ToString(),
-                UserId = flags.UserId,
-                inventoryItems = tempItems
-            };
-
-            var tempList = new List<InventoryCs>();
-            tempList.Add(temp);
-
-            await inventoryRepository.CreateItemsAsync(tempList);
-
             return Ok("Created");
         }
     }

@@ -1,14 +1,14 @@
+using Game.Inventory.Service.Entities;
+
 namespace Game.Inventory.Service.Dtos
 {
-    public record InventoryDto(List<ItemDto> inventoryItems);
+    public record InventoryDto(List<ContainerCs> inventoryItems);
 
-    public record CreateInventoryDto(string UserId, bool empty = false);
+    public record CreateInventoryDto(string UserId, bool worldInit = false);
 
     public record GetInventoryDto(string UserId);
 
-    public record InventoryItemDto(string itemId, string Name, string Description, DateTimeOffset AcquiredDate);
-
-    public record ItemDto(string Id, string Name, string Description);
+    public record InventoryItemDto(string Id, string Name, string Description, DateTimeOffset CreatedDate);
 
     //public record CreateItemsDto(string Id, string Name, string Description, decimal Price);
 
